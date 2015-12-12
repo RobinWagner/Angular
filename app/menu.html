@@ -35,8 +35,8 @@
                 <li role="presentation"><a aria-controls="mains" role="tab">Mains</a></li>
                 <li role="presentation"><a aria-controls="desserts" role="tab">Desserts</a></li>
               </ul>
-
-              <ul class="media-list">
+              <div class="tab-content">
+              <ul class="media-list tab-pane fade in active">
               <li class="media" ng-repeat="dish in menuCtrl.dishes">
                 <div class="media-left media-middle">
                   <a href="#">
@@ -51,6 +51,7 @@
                 </div>
             </li>
           </ul>
+        </div>
         </div>
     </div>
 
