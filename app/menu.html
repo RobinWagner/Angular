@@ -26,9 +26,7 @@
 <body>
 
     <div class="container">
-        <div class="row row-content"
-                        ng-init="
-                          ">
+        <div class="row row-content">
             <div class="col-xs-12">
               <ul class="media-list">
               <li class="media" ng-repeat="dish in dishes">
@@ -95,6 +93,7 @@
            comment: ''
         }
       ];
+      this.dishes = dishes;
       });
 
     </script>
