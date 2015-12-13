@@ -39,12 +39,15 @@
                     <span class="badge">{{dishDtlCtrl.dish.price | currency}}</span></h2>
                     <p>{{dishDtlCtrl.dish.description}}</p>
                 </div>
-            <div class="col-xs-9 col-xs-offset-1" ng-repeat="dish in dishDtlCtrl.dish.comments">
-                <blockquote>
-                    <p>{{dish.rating}} Stars</p>
-                    <p>{{dish.comment}}</p>
-                    <footer>{{dish.author}}, {{dish.date | date}}</footer>
-                </blockquote>
+            <div class="col-xs-9 col-xs-offset-1">
+                <h4>Customer Comments <small>Sort by <input ng-model="sortBy"></small></h4>
+                <ul class="list-unstyled" ng-repeat="comment in dishDtlCtrl.dish.comments | orderBy: sortBy">
+                <li><blockquote>
+                    <p>{{comment.rating}} Stars</p>
+                    <p>{{comment.comment}}</p>
+                    <footer>{{comment.author}}, {{comment.date | date}}</footer>
+                </blockquote></li>
+                </ul>
             </div>
         </div>
 
@@ -100,6 +103,7 @@
                     };
             
             this.dish = dish;
+            this.sortBy="";
             
         });
 
